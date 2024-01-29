@@ -1,0 +1,112 @@
+html{
+  scroll-behavior: smooth;
+}
+body{
+  background-color:#ff6347;
+  color:white;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+#main{
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 20px;
+  border-radius: 10px;
+  width: fit-content;
+  text-align: left;
+}
+
+#title{
+  text-align: center;
+}
+#title h2:hover{
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: ease-in 3s;
+  text-shadow:2px 2px 20px #0000004c;
+}
+
+.quote {
+  color: #c5bbbb; 
+  font-style: italic;
+  font-size: small;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-description {
+  position: absolute;
+  top: 50%;left: 50%;
+  transform: translate(-50%, -50%); 
+  overflow:auto;
+  width: 90%;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.568);
+  opacity: 0;
+  transition: opacity 0.5s;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.image-container:hover .image-description {
+  opacity: 1;
+}
+
+#image{
+  display: block;
+  margin: 0 auto; 
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#image:hover{
+  animation: brightness 5s ease-out infinite;
+}
+#img-caption {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#tribute-link button{
+  color: white;
+  background-color: #1404044c;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 30px;
+}
+#tribute-link :hover{
+  transition: 2s;
+  animation: pulse 2s infinite;
+}
+
+@keyframes brightness {
+  0%{ filter:brightness(50%); }
+  30%{ filter:brightness(80%); }
+  50%{ filter:brightness(50%); }
+  70%{ filter:brightness(30%); }
+  100%{ filter:brightness(20%); }
+}
+@keyframes pulse {
+  0% {box-shadow: 0 0 0 0 rgba(250, 254, 255, 0.7);}
+  70% {box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.411);}
+  100% {box-shadow: 0 0 0 2px rgba(0, 0, 3, 0.24);}
+}
+@media only screen and (max-width: 600px){
+  #image {
+    width: 100%;
+    height: auto;
+    max-height: 240px;
+  }
+  .image-description {
+    font-size: 12px; 
+    padding: 10px;
+    width: 90%;
+  }
+ .tribute-info{
+  columns: 2;
+ }
+}
